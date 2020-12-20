@@ -47,11 +47,12 @@ class LoginViewController: UIViewController {
 // viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //callCalculator()
         configureTextFields()
-        navigationController?.isNavigationBarHidden = true
-
+        
     }
+    
     @IBAction func tapView(_ sender: UITapGestureRecognizer) {
         self.view.endEditing(true)
     }

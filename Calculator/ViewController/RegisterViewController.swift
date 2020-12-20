@@ -19,7 +19,6 @@ class RegisterViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.isNavigationBarHidden = true
         configureTextField()
         configureTapGesture()
         createPickerView()
