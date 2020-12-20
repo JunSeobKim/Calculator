@@ -15,6 +15,7 @@
 		6E0E52FF25712323006AE041 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E0E52FE25712323006AE041 /* Assets.xcassets */; };
 		6E0E530225712323006AE041 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E0E530025712323006AE041 /* LaunchScreen.storyboard */; };
 		6E0E530D2572D371006AE041 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0E530C2572D371006AE041 /* RegisterViewController.swift */; };
+		6E120A89258F996E0077F7AE /* JSArirangHON.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E120A88258F996E0077F7AE /* JSArirangHON.ttf */; };
 		8BA115C10DA9DCE660047E0F /* Pods_Calculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F3AA78A467F01CA5ED69E5 /* Pods_Calculator.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		6E0E530125712323006AE041 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6E0E530325712323006AE041 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E0E530C2572D371006AE041 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		6E120A88258F996E0077F7AE /* JSArirangHON.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = JSArirangHON.ttf; sourceTree = "<group>"; };
 		DF445CD3EB5A9ADB86CDAF0A /* Pods-Calculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calculator.release.xcconfig"; path = "Target Support Files/Pods-Calculator/Pods-Calculator.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,6 +93,7 @@
 				6E0E52FE25712323006AE041 /* Assets.xcassets */,
 				6E0E530025712323006AE041 /* LaunchScreen.storyboard */,
 				6E0E530325712323006AE041 /* Info.plist */,
+				6E120A88258F996E0077F7AE /* JSArirangHON.ttf */,
 				6E0E52FB25712320006AE041 /* Calculator.xcdatamodeld */,
 			);
 			path = Calculator;
@@ -166,6 +169,7 @@
 			files = (
 				6E0E530225712323006AE041 /* LaunchScreen.storyboard in Resources */,
 				6E0E52FF25712323006AE041 /* Assets.xcassets in Resources */,
+				6E120A89258F996E0077F7AE /* JSArirangHON.ttf in Resources */,
 				6E0E52FA25712320006AE041 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

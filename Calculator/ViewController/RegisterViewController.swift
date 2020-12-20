@@ -21,6 +21,7 @@ class RegisterViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
         configureTextField()
+        configureTapGesture()
         createPickerView()
         dismissPickerView()
         
@@ -31,6 +32,10 @@ class RegisterViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     @IBAction func registerTapped(_ sender: UIButton) {
+        print(emailFieldForRegisterVC.text!)
+        print(passwordFieldForRegisterVC.text!)
+        print(showAgePicker.text!)
+        print()
         
     }
     
@@ -45,6 +50,14 @@ class RegisterViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         passwordFieldForRegisterVC.delegate = self
         //agePickerForRegisterVC.delegate = self
         //agePickerForRegisterVC.dataSource = self
+    }
+    private func configureTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(RegisterViewController.handleTap))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func handleTap () {
+        view.endEditing(true)
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

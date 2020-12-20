@@ -49,9 +49,11 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         //callCalculator()
         configureTextFields()
-        configureTapGesture()
-        
+        navigationController?.isNavigationBarHidden = true
 
+    }
+    @IBAction func tapView(_ sender: UITapGestureRecognizer) {
+        self.view.endEditing(true)
     }
     
 }
