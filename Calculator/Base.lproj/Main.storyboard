@@ -22,43 +22,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Your food management App." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEi-dr-liy">
-                                <rect key="frame" x="101" y="345" width="213" height="21"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pOc-06-cxR">
-                                <rect key="frame" x="183" y="471" width="48" height="36"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
-                                <state key="normal" title="Login">
-                                    <color key="titleColor" systemColor="labelColor"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H14-ZL-2HV">
-                                <rect key="frame" x="172" y="540" width="71" height="36"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
-                                <state key="normal" title="Register">
-                                    <color key="titleColor" systemColor="labelColor"/>
-                                </state>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Cal-Culator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8wC-nr-NHC">
-                                <rect key="frame" x="101" y="257" width="212" height="45"/>
-                                <fontDescription key="fontDescription" name="JSArirangHON-Regular" family="JS Arirang HON" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="256" translatesAutoresizingMaskIntoConstraints="NO" id="M0c-tN-1Le">
+                                <rect key="frame" x="100.5" y="235.5" width="213" height="425"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="fAl-cK-Q4w">
+                                        <rect key="frame" x="0.0" y="0.0" width="213" height="81"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cal-Culator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8wC-nr-NHC">
+                                                <rect key="frame" x="0.5" y="0.0" width="212" height="44.5"/>
+                                                <fontDescription key="fontDescription" name="JSArirangHON-Regular" family="JS Arirang HON" pointSize="40"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your food management App." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEi-dr-liy">
+                                                <rect key="frame" x="0.0" y="60.5" width="213" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="mUv-96-q2V">
+                                        <rect key="frame" x="0.0" y="337" width="213" height="88"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pOc-06-cxR">
+                                                <rect key="frame" x="82.5" y="0.0" width="48" height="36"/>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                                <state key="normal" title="Login">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H14-ZL-2HV">
+                                                <rect key="frame" x="71" y="52" width="71" height="36"/>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                                <state key="normal" title="Register">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Z78-WX-Wwu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="JEi-dr-liy" firstAttribute="centerX" secondItem="gSY-KY-XMB" secondAttribute="centerX" id="Be1-ye-r7g"/>
-                            <constraint firstItem="pOc-06-cxR" firstAttribute="centerX" secondItem="gSY-KY-XMB" secondAttribute="centerX" id="GYj-rM-0ja"/>
-                            <constraint firstItem="H14-ZL-2HV" firstAttribute="centerX" secondItem="gSY-KY-XMB" secondAttribute="centerX" id="SE5-ZB-CVh"/>
-                            <constraint firstItem="8wC-nr-NHC" firstAttribute="centerX" secondItem="gSY-KY-XMB" secondAttribute="centerX" id="hDl-Wn-Tcq"/>
+                            <constraint firstItem="M0c-tN-1Le" firstAttribute="centerX" secondItem="gSY-KY-XMB" secondAttribute="centerX" id="G3a-N9-Yml"/>
+                            <constraint firstItem="M0c-tN-1Le" firstAttribute="centerY" secondItem="gSY-KY-XMB" secondAttribute="centerY" id="faJ-XQ-wEK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bNZ-zy-5aG"/>
+                    <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bkz-U8-SGI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
