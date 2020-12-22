@@ -19,7 +19,7 @@ class LoginViewController: UIViewController {
     // MARK: - IBAction
     
     @IBAction func viewTapped(_ sender: UITapGestureRecognizer) {
-        view.endEditing(true)
+        self.view.endEditing(true)
     }
     @IBAction func loginTapped(_ sender: UIButton) {
         // TODO: 로그인 버튼
@@ -58,13 +58,12 @@ class LoginViewController: UIViewController {
 
 // MARK: - EXTENSION
 extension LoginViewController: UITextFieldDelegate {
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        // textField.restorationIdentifier
-    }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // if emailTextField go to passwordTextField
         if let textId = textField.restorationIdentifier, textId == "email" {
             password.becomeFirstResponder()
         }
+        // if passwordTextField go to loginTapped
         if let textId = textField.restorationIdentifier, textId == "password" {
             self.loginTapped(self.loginBtn)
         }
