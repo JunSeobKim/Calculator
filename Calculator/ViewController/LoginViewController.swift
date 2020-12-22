@@ -10,11 +10,24 @@ import Alamofire
 
 class LoginViewController: UIViewController {
     
-    @IBOutlet weak var emailFieldForLoginVC: UITextField!
-    @IBOutlet weak var passwordFieldForLoginVC: UITextField!
-    @IBOutlet weak var loginButton: UIButton!
-
-// func
+    // MARK: - IBOutlet
+    
+    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var loginBtn: UIButton!
+    
+    // MARK: - IBAction
+    
+    @IBAction func viewTapped(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+    @IBAction func loginTapped(_ sender: UIButton) {
+        // TODO: 로그인 버튼
+        print("로그인 누름")
+    }
+    
+    // MARK: - Function
+    
     func callCalculator() {
         AF.request("https://api.spoonacular.com/food/trivia/random?apiKey=f78347a30c0e43a8be0fad4a9c491509").response { response in
             debugPrint(response)
@@ -22,47 +35,39 @@ class LoginViewController: UIViewController {
         }
     }
     
-    private func configureTextFields() {
-        emailFieldForLoginVC.delegate = self
-        passwordFieldForLoginVC.delegate = self
-    }
+    // MARK: - LifeCycle
     
-    private func configureTapGesture() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.handleTap))
-        view.addGestureRecognizer(tapGesture)
-    }
-    
-    @objc func handleTap () {
-        view.endEditing(true)
-    }
-    
-// IBAction
-    @IBAction func loginTapped(_ sender: UIButton) {
-        print(emailFieldForLoginVC.text!)
-        print(passwordFieldForLoginVC.text!)
-        //TODO: error handling
-        view.endEditing(true)
-    }
-    
-// viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //callCalculator()
-        configureTextFields()
-        
+        self.email.becomeFirstResponder()
+        email.delegate = self
+        password.delegate = self
     }
     
-    @IBAction func tapView(_ sender: UITapGestureRecognizer) {
-        self.view.endEditing(true)
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
     }
+    */
     
 }
 
+// MARK: - EXTENSION
 extension LoginViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        // textField.restorationIdentifier
+    }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+        if let textId = textField.restorationIdentifier, textId == "email" {
+            password.becomeFirstResponder()
+        }
+        if let textId = textField.restorationIdentifier, textId == "password" {
+            self.loginTapped(self.loginBtn)
+        }
         return true
     }
 }
-
