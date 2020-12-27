@@ -14,6 +14,8 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var emailCheck: UILabel!
+    @IBOutlet weak var passwordCheck: UILabel!
     @IBOutlet weak var loginBtn: UIButton!
     
     // MARK: - IBAction
@@ -22,10 +24,21 @@ class LoginViewController: UIViewController {
         self.view.endEditing(true)
     }
     @IBAction func loginTapped(_ sender: UIButton) {
-        // TODO: 로그인 버튼
-        guard let emailValue = email.text else { return }
-        if let passwordValue = password.text, passwordValue == "" {
-            password.isHidden = true
+        // Check email
+        if email.text == "" {
+            email.layer.borderWidth = 1
+            email.layer.borderColor = UIColor.systemPink.cgColor
+            emailCheck.isHidden = false
+        }
+        // Check password
+        if password.text == "" {
+            password.layer.borderWidth = 1
+            password.layer.borderColor = UIColor.systemPink.cgColor
+            passwordCheck.isHidden = false
+        }
+        if email.text != "", password.text != "" {
+            // TODO: send server
+            print("Login...")
         }
     }
     
@@ -45,6 +58,8 @@ class LoginViewController: UIViewController {
         self.email.becomeFirstResponder()
         email.delegate = self
         password.delegate = self
+        emailCheck.isHidden = true
+        passwordCheck.isHidden = true
         //TODO: 돌아가기 누르면 pop 시키기
     }
     
@@ -62,6 +77,15 @@ class LoginViewController: UIViewController {
 
 // MARK: - EXTENSION
 extension LoginViewController: UITextFieldDelegate {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        if let textId = textField.restorationIdentifier, textId == "email" {
+            emailCheck.isHidden = true
+        }
+        if let textId = textField.restorationIdentifier, textId == "password" {
+            passwordCheck.isHidden = true
+        }
+        textField.layer.borderWidth = 0
+    }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // if emailTextField go to passwordTextField
         if let textId = textField.restorationIdentifier, textId == "email" {
