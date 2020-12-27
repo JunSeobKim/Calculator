@@ -23,7 +23,10 @@ class LoginViewController: UIViewController {
     }
     @IBAction func loginTapped(_ sender: UIButton) {
         // TODO: 로그인 버튼
-        print("로그인 누름")
+        guard let emailValue = email.text else { return }
+        if let passwordValue = password.text, passwordValue == "" {
+            password.isHidden = true
+        }
     }
     
     // MARK: - Function
@@ -42,6 +45,7 @@ class LoginViewController: UIViewController {
         self.email.becomeFirstResponder()
         email.delegate = self
         password.delegate = self
+        //TODO: 돌아가기 누르면 pop 시키기
     }
     
     /*
