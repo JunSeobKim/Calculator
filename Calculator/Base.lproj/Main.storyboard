@@ -8,11 +8,6 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="JSArirangHON.ttf">
-            <string>JSArirangHON-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--First View Controller-->
         <scene sceneID="gP4-cg-wcZ">
@@ -23,19 +18,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="200" translatesAutoresizingMaskIntoConstraints="NO" id="M0c-tN-1Le">
-                                <rect key="frame" x="100.5" y="263.5" width="213" height="369"/>
+                                <rect key="frame" x="100.5" y="260" width="213" height="376.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="fAl-cK-Q4w">
-                                        <rect key="frame" x="0.0" y="0.0" width="213" height="81"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="213" height="86.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cal-Culator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8wC-nr-NHC">
-                                                <rect key="frame" x="0.5" y="0.0" width="212" height="44.5"/>
-                                                <fontDescription key="fontDescription" name="JSArirangHON-Regular" family="JS Arirang HON" pointSize="40"/>
+                                                <rect key="frame" x="4.5" y="0.0" width="204" height="50"/>
+                                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="40"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your food management App." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEi-dr-liy">
-                                                <rect key="frame" x="0.0" y="60.5" width="213" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="66" width="213" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -43,11 +38,11 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="mUv-96-q2V">
-                                        <rect key="frame" x="0.0" y="281" width="213" height="88"/>
+                                        <rect key="frame" x="0.0" y="286.5" width="213" height="90"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pOc-06-cxR">
-                                                <rect key="frame" x="82.5" y="0.0" width="48" height="36"/>
-                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                                <rect key="frame" x="79.5" y="0.0" width="54" height="37"/>
+                                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="20"/>
                                                 <state key="normal" title="Login">
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
@@ -56,8 +51,8 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H14-ZL-2HV">
-                                                <rect key="frame" x="71" y="52" width="71" height="36"/>
-                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                                <rect key="frame" x="70" y="53" width="73" height="37"/>
+                                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="20"/>
                                                 <state key="normal" title="Register">
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
@@ -96,7 +91,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Whx-Pd-SSw"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="JSArirangHON-Regular" family="JS Arirang HON" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="25"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
