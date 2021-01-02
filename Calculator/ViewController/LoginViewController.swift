@@ -45,10 +45,17 @@ class LoginViewController: UIViewController {
     // MARK: - Function
     
     func callCalculator() {
-        AF.request("https://api.spoonacular.com/food/trivia/random?apiKey=f78347a30c0e43a8be0fad4a9c491509").response { response in
-            debugPrint(response)
-            print(response)
-        }
+        // https://api.spoonacular.com/food/trivia/random?apiKey=f78347a30c0e43a8be0fad4a9c491509
+        
+        AF.request("http://52.79.237.26:4000/food/foodtrivia")
+            .responseString { (string) in
+                switch string.result {
+                        case .success(let data):
+                            print(data)
+                        case let .failure(error):
+                            print(error)
+                        }
+            }
     }
     
     // MARK: - LifeCycle
@@ -61,6 +68,7 @@ class LoginViewController: UIViewController {
         emailCheck.isHidden = true
         passwordCheck.isHidden = true
         //TODO: 돌아가기 누르면 pop 시키기
+        callCalculator()
     }
     
     /*
