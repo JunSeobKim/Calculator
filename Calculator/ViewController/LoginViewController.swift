@@ -47,7 +47,7 @@ class LoginViewController: UIViewController {
     func callCalculator() {
         // https://api.spoonacular.com/food/trivia/random?apiKey=f78347a30c0e43a8be0fad4a9c491509
         
-        AF.request("http://52.79.237.26:4000/food/foodtrivia")
+        AF.request("http://54.180.24.44:4000/food/foodtrivia")
             .responseString { (string) in
                 switch string.result {
                         case .success(let data):
@@ -57,6 +57,29 @@ class LoginViewController: UIViewController {
                         }
             }
     }
+    
+    func signUp(){
+        let param = [
+            "email": "wnstjq616@gmail.com",
+            "username": "kimjunseob",
+            "password": "12345678",
+            "gender": "male",
+            "age": "20"
+        ]
+        
+        AF.request("http://54.180.24.44:4000/user/signup", method: .post, parameters: param, encoding: JSONEncoding.default)
+            .responseJSON { (response) in
+                print("success")
+            }
+    }
+    /*
+     email: email,
+         username: username,
+         password: password,
+         gender: value,
+         age: age,
+     
+     */
     
     // MARK: - LifeCycle
     
@@ -69,6 +92,7 @@ class LoginViewController: UIViewController {
         passwordCheck.isHidden = true
         //TODO: 돌아가기 누르면 pop 시키기
         callCalculator()
+        signUp()
     }
     
     /*
