@@ -38,7 +38,7 @@ class LoginViewController: UIViewController {
         }
         if email.text != "", password.text != "" {
             // TODO: send server
-            print("Login...")
+            signIn(email: email.text!, password: password.text!)
         }
     }
     
@@ -58,19 +58,20 @@ class LoginViewController: UIViewController {
             }
     }
     
-    func signUp(){
+    func signIn(email: String, password: String) -> String {
+        var result = ""
         let param = [
-            "email": "wnstjq616@gmail.com",
-            "username": "kimjunseob",
-            "password": "12345678",
-            "gender": "male",
-            "age": "20"
+            "email": email,
+            "password": password
         ]
         
-        AF.request("http://54.180.24.44:4000/user/signup", method: .post, parameters: param, encoding: JSONEncoding.default)
-            .responseJSON { (response) in
-                print("success")
+        AF.request("http://54.180.24.44:4000/user/signin", method: .post, parameters: param, encoding: JSONEncoding.default)
+            .responseString { (response) in
+                if let res = response.value {
+                    result = res
+                }
             }
+        return result
     }
     /*
      email: email,
@@ -92,7 +93,6 @@ class LoginViewController: UIViewController {
         passwordCheck.isHidden = true
         //TODO: 돌아가기 누르면 pop 시키기
         callCalculator()
-        signUp()
     }
     
     /*
