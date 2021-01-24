@@ -36,9 +36,22 @@ class LoginViewController: UIViewController {
             password.layer.borderColor = UIColor.systemPink.cgColor
             passwordCheck.isHidden = false
         }
+        print("touch")
         if email.text != "", password.text != "" {
             // TODO: send server
-            signIn(email: email.text!, password: password.text!)
+            print("touch2")
+            // TODO: Using Closure, 비동기 사용 Rxswift?
+            signIn(email: email.text!, password: password.text!) string in {
+                
+            }
+            print("aaa")
+            if loginResult == "ok" {
+                // TODO: login success
+                print("login success")
+            } else if loginResult == "invalid" {
+                // TODO: login failed
+                print("login failed")
+            }
         }
     }
     
@@ -58,20 +71,21 @@ class LoginViewController: UIViewController {
             }
     }
     
-    func signIn(email: String, password: String) -> String {
-        var result = ""
+    func signIn(email: String, password: String) -> Void {
         let param = [
             "email": email,
             "password": password
         ]
         
         AF.request("http://54.180.24.44:4000/user/signin", method: .post, parameters: param, encoding: JSONEncoding.default)
-            .responseString { (response) in
-                if let res = response.value {
-                    result = res
-                }
+            .responseString { (string) in
+                switch string.result {
+                        case .success(let data):
+                            print(data)
+                        case let .failure(error):
+                            print(error)
+                        }
             }
-        return result
     }
     /*
      email: email,
@@ -92,7 +106,7 @@ class LoginViewController: UIViewController {
         emailCheck.isHidden = true
         passwordCheck.isHidden = true
         //TODO: 돌아가기 누르면 pop 시키기
-        callCalculator()
+        //callCalculator()
     }
     
     /*
