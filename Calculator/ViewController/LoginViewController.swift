@@ -39,19 +39,11 @@ class LoginViewController: UIViewController {
         print("touch")
         if email.text != "", password.text != "" {
             // TODO: send server
-            print("touch2")
             // TODO: Using Closure, 비동기 사용 Rxswift?
-            signIn(email: email.text!, password: password.text!) string in {
-                
+            signIn(email: email.text!, password: password.text!) { data in
+                print(data!)
             }
             print("aaa")
-            if loginResult == "ok" {
-                // TODO: login success
-                print("login success")
-            } else if loginResult == "invalid" {
-                // TODO: login failed
-                print("login failed")
-            }
         }
     }
     
@@ -71,24 +63,31 @@ class LoginViewController: UIViewController {
             }
     }
     
-    func signIn(email: String, password: String) -> Void {
+    func signIn(email: String, password: String, _ completion: @escaping (String?) -> Void) {
         let param = [
             "email": email,
             "password": password
         ]
         
-        AF.request("http://54.180.24.44:4000/user/signin", method: .post, parameters: param, encoding: JSONEncoding.default)
-            .responseString { (string) in
-                switch string.result {
-                        case .success(let data):
-                            print(data)
-                        case let .failure(error):
-                            print(error)
-                        }
-            }
+        DispatchQueue.global().async {
+            AF.request("http://54.180.24.44:4000/user/signin", method: .post, parameters: param, encoding: JSONEncoding.default)
+                .responseString { (string) in
+                    switch string.result {
+                            case .success(let data):
+                                DispatchQueue.main.async {
+                                    return completion(data)
+                                }
+                            case .failure(let error):
+                                // TODO: error 처리
+                                print(error)
+                            }
+                }
+        }
+        
+        
     }
     /*
-     email: email,
+         email: email,
          username: username,
          password: password,
          gender: value,
